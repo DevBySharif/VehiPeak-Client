@@ -1,9 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import Banner from "../Component/Banner/Banner";
+import Navbar from "../Component/Navbar/Navbar";
 
 const Mainlayout = () => {
+  const location = useLocation();
   return (
     <div>
-      <h1>This is main layout</h1>
+      <div className="relative">
+        <div className="absolute z-10 w-full">
+          <Navbar></Navbar>
+        </div>
+        {location.pathname === "/" && <Banner />}
+      </div>
+
       <Outlet></Outlet>
     </div>
   );
