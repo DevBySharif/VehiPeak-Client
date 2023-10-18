@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/VehiPeak-logo.png";
 
 const Navbar = () => {
@@ -9,12 +9,12 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink>Item 3</NavLink>
+        <NavLink to="/featuredCars">Featured Car</NavLink>
       </li>
     </>
   );
   return (
-    <div className="navbar container px-4">
+    <div className="navbar container px-4 lg:mb-4">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -50,7 +50,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link to="/addProduct">
+          <button className="btn btn-outline btn-error">Add Product</button>
+        </Link>
       </div>
     </div>
   );

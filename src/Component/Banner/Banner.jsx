@@ -28,35 +28,35 @@ const Banner = () => {
       >
         <SwiperSlide>
           <img
-            className=" bg-center bg-blend-darken h-[100vh] w-full object-cover"
+            className=" bg-center bg-blend-darken h-[80vh] w-full object-cover"
             src={car1}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className=" bg-center bg-blend-darken h-[100vh] w-full object-cover"
+            className=" bg-center bg-blend-darken h-[80vh] w-full object-cover"
             src={car2}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className=" bg-center bg-blend-darken h-[100vh] w-full object-cover"
+            className=" bg-center bg-blend-darken h-[80vh] w-full object-cover"
             src={car3}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="bg-cover bg-center bg-blend-darken h-[100vh] w-full object-cover"
+            className="bg-cover bg-center bg-blend-darken h-[80vh] w-full object-cover"
             src={car4}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="bg-cover bg-center bg-blend-darken h-[100vh] w-full object-cover"
+            className="bg-cover bg-center bg-blend-darken h-[80vh] w-full object-cover"
             src={car5}
             alt=""
           />

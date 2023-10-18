@@ -1,7 +1,11 @@
+import FeaturedListings from "../FeaturedListings/FeaturedListings";
+import Footer from "../Footer/Footer";
+
 const Home = () => {
   return (
     <div>
-      <h1>this is home</h1>
+      <FeaturedListings></FeaturedListings>
+      <Footer></Footer>
     </div>
   );
 };
