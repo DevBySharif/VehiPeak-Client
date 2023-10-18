@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -40,14 +41,16 @@ const Brand = () => {
         ) : (
           brand.map((item) => (
             <SwiperSlide className="w-[400px] h-[400px]" key={item.id}>
-              <h3 className="text-3xl font-bold text-[#ff4605]">
-                {item.brand}
-              </h3>
-              <img
-                className="w-[400px] h-[400px]"
-                src={item.image_url}
-                alt={item.brand}
-              />
+              <Link to={`/brand/${item.id}`}>
+                <h3 className="text-3xl font-bold text-[#ff4605]">
+                  {item.brand}
+                </h3>
+                <img
+                  className="w-[400px] h-[400px]"
+                  src={item.image_url}
+                  alt={item.brand}
+                />
+              </Link>
             </SwiperSlide>
           ))
         )}
