@@ -5,9 +5,9 @@ const Footer = () => {
       <aside>
         <img src={logo} alt="" />
         <p>
-          ACME Industries Ltd.
+          VehiPeak Industries Ltd.
           <br />
-          Providing reliable tech since 1992
+          Providing reliable car since 1993
         </p>
       </aside>
       <nav>
