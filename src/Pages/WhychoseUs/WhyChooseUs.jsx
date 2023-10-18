@@ -3,7 +3,7 @@ const WhyChooseUs = () => {
   return (
     <div className="max-w-[1400px] mx-auto mt-36 mb-16">
       <h1 className="text-5xl font-extrabold text-center">Why Choose Us ?</h1>
-      <div className="flex justify-between gap-16">
+      <div className="mg:flex-col lg:flex  justify-between gap-16">
         <div className="space-y-5 text-center">
           <div className="m-4 text-4xl text-orange-500 flex justify-center">
             <FaCertificate></FaCertificate>
