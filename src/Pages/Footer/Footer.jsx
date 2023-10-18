@@ -1,7 +1,7 @@
 import logo from "../../assets/VehiPeak-logo.png";
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-[#222732] text-base-content">
+    <footer className="footer p-10 bg-[#222732] text-white">
       <aside>
         <img src={logo} alt="" />
         <p>
