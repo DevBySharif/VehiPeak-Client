@@ -1,7 +1,14 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 import logo from "../../assets/VehiPeak-logo.png";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
   const link = (
     <>
       <li>
@@ -50,8 +57,44 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        {user?.email ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src={user.photoURL} alt={user.displayName} />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <button className="btn btn-sm text-black btn-ghost">
+                  {user.displayName}
+                </button>
+              </li>
+              <li>
+                <button
+                  className="btn btn-sm text-black btn-ghost"
+                  onClick={handleSignOut}
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="btn btn-sm  btn-ghost text-white">Login</button>
+          </Link>
+        )}
+        <div className="text-white mx-4">|</div>
         <Link to="/addProduct">
-          <button className="btn btn-outline btn-error">Add Product</button>
+          <button className="btn-small text-white">Add Product</button>
+        </Link>
+        <div className="text-white mx-4">|</div>
+        <Link to="/cart" className="text-white mr-4">
+          My Cart
         </Link>
       </div>
     </div>

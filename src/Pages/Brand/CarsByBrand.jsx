@@ -33,7 +33,7 @@ const CarsByBrand = ({ car }) => {
           </div>
           <hr />
           <div className="flex justify-around">
-            <button className="bg-[#ff4605] px-4 py-3 rounded-lg">
+            <button className="bg-[#ff4605] px-4 py-3 rounded-lg font-bold">
               Details
             </button>
             <button>
@@ -74,7 +74,7 @@ const CarsByBrand = ({ car }) => {
                 />
               </p>
             </button>
-            <button className="bg-[#ff4605] px-4 py-3 rounded-lg">
+            <button className="bg-[#ff4605] px-4 py-3 rounded-lg font-bold">
               Update
             </button>
           </div>
