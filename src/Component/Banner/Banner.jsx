@@ -4,9 +4,9 @@ import { Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import car1 from "../../assets/car1.jpg";
 import car2 from "../../assets/car2.jpg";
-import car3 from "../../assets/car3.jpg";
+import car3 from "../../assets/car3.png";
 import car4 from "../../assets/car4.jpg";
-import car5 from "../../assets/car5.jpg";
+import car5 from "../../assets/car5.png";
 
 const Banner = () => {
   return (
@@ -28,35 +28,35 @@ const Banner = () => {
       >
         <SwiperSlide>
           <img
-            className=" bg-center bg-blend-darken h-[80vh] w-full object-cover"
+            className=" bg-center h-[80vh] w-full object-cover"
             src={car1}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className=" bg-center bg-blend-darken h-[80vh] w-full object-cover"
+            className=" bg-center h-[80vh] w-full object-cover"
             src={car2}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className=" bg-center bg-blend-darken h-[80vh] w-full object-cover"
+            className=" bg-center h-[80vh] w-full object-cover"
             src={car3}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="bg-cover bg-center bg-blend-darken h-[80vh] w-full object-cover"
+            className="bg-cover bg-center  h-[80vh] w-full object-cover"
             src={car4}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            className="bg-cover bg-center bg-blend-darken h-[80vh] w-full object-cover"
+            className="bg-cover bg-center  h-[80vh] w-full object-cover"
             src={car5}
             alt=""
           />

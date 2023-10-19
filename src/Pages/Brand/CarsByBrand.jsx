@@ -1,4 +1,5 @@
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const CarsByBrand = ({ car }) => {
   console.log(car);
@@ -11,6 +12,7 @@ const CarsByBrand = ({ car }) => {
     fuel,
     price,
     rating,
+    _id,
   } = car;
   return (
     <div>
@@ -77,9 +79,11 @@ const CarsByBrand = ({ car }) => {
                   />
                 </p>
               </button>
-              <button className="bg-[#ff4605] px-4 py-3 rounded-lg font-bold">
-                Update
-              </button>
+              <Link to={`/updateProduct/${_id}`}>
+                <button className="bg-[#ff4605] px-4 py-3 rounded-lg font-bold">
+                  Update
+                </button>
+              </Link>
             </div>
           </div>
         </div>

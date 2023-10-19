@@ -1,5 +1,4 @@
 const FeaturedCard = ({ car }) => {
-  console.log(car);
   const { photo, brandName, modelName, year, fuel, price, transmission } = car;
   return (
     <div>

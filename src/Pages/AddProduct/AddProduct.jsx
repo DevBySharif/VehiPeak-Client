@@ -1,5 +1,6 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const AddProduct = () => {
   const handleAddProduct = (event) => {
     event.preventDefault();
@@ -25,7 +26,6 @@ const AddProduct = () => {
       description,
       photo,
     };
-    console.log(newCars);
 
     fetch("http://localhost:5005/cars", {
       method: "POST",
@@ -37,6 +37,14 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product added successfully",
+            icon: "Success",
+            confirmButtonText: "Cool",
+          });
+        }
       });
   };
   return (
@@ -46,14 +54,14 @@ const AddProduct = () => {
           <FaArrowLeft></FaArrowLeft> Back to Home
         </button>
       </Link>
-      <h2 className="text-3xl font-extrabold">Add a Car</h2>
+      <h2 className="text-3xl font-extrabold text-center">Add a Car</h2>
       <form onSubmit={handleAddProduct}>
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Brand Name</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="brandName"
@@ -66,7 +74,7 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Model Name</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="modelName"
@@ -82,7 +90,7 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Year</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="year"
@@ -95,7 +103,7 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Transmission</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="transmission"
@@ -110,7 +118,7 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Type</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="type"
@@ -123,7 +131,7 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Fuel</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="fuel"
@@ -139,7 +147,7 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Price(USD)</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="price"
@@ -152,7 +160,7 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Description</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="description"
@@ -168,7 +176,7 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Photo URL</span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 name="photo"
