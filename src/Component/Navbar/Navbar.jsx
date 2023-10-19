@@ -57,6 +57,14 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        <Link to="/addProduct">
+          <button className="btn-small text-white">Add Product</button>
+        </Link>
+        <div className="text-white mx-4">|</div>
+        <Link to="/cart" className="text-white">
+          My Cart
+        </Link>
+        <div className="text-white mx-4">|</div>
         {user?.email ? (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -88,14 +96,6 @@ const Navbar = () => {
             <button className="btn btn-sm  btn-ghost text-white">Login</button>
           </Link>
         )}
-        <div className="text-white mx-4">|</div>
-        <Link to="/addProduct">
-          <button className="btn-small text-white">Add Product</button>
-        </Link>
-        <div className="text-white mx-4">|</div>
-        <Link to="/cart" className="text-white mr-4">
-          My Cart
-        </Link>
       </div>
     </div>
   );
