@@ -43,7 +43,10 @@ const Route = createBrowserRouter([
         <UpdateProduct></UpdateProduct>
       </PrivateRoute>
     ),
-    loader: (params) => fetch(`http://localhost:5005/cars/${params.id}`),
+    loader: (params) =>
+      fetch(
+        `https://vehi-peak-server-side-4xwmy159y-devshari.vercel.app/cars/${params.id}`
+      ),
   },
   {
     path: "/brand/:brand",

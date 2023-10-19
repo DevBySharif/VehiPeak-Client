@@ -9,7 +9,7 @@ const FeaturedListings = () => {
   const location = useLocation();
   const isFeatureRoute = location.pathname === "/featuredCars";
   useEffect(() => {
-    fetch("http://localhost:5005/cars")
+    fetch("https://vehi-peak-server-side-4xwmy159y-devshari.vercel.app/cars")
       .then((res) => res.json())
       .then((data) => {
         setFeaturedCars(data);

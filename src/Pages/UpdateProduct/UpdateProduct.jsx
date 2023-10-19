@@ -44,7 +44,7 @@ const UpdateProduct = () => {
       rating,
     };
 
-    // fetch("http://localhost:5005/cars", {
+    // fetch("https://vehi-peak-server-side-4xwmy159y-devshari.vercel.app/cars", {
     //   method: "POST",
     //   headers: {
     //     "content-type": "application/json",
