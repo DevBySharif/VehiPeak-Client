@@ -8,6 +8,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyCart from "../Pages/MyCart/MyCart";
 import Register from "../Pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const Route = createBrowserRouter([
   {
@@ -19,16 +20,20 @@ const Route = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
-      {
-        path: "/featuredCars",
-        element: <FeaturedListings></FeaturedListings>,
-      },
     ],
+  },
+  {
+    path: "/featuredCars",
+    element: <FeaturedListings></FeaturedListings>,
   },
 
   {
     path: "/addProduct",
-    element: <AddProduct></AddProduct>,
+    element: (
+      <PrivateRoute>
+        <AddProduct></AddProduct>
+      </PrivateRoute>
+    ),
   },
   {
     path: "/brand/:brand",

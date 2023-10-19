@@ -1,10 +1,16 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import logo from "../../assets/VehiPeak-logo.png";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const location = useLocation();
+
+  const isHomeRoute = location.pathname === "/";
+  const navbarBackgroundClass = isHomeRoute
+    ? "bg-transparent"
+    : "bg-base-content";
 
   const handleSignOut = () => {
     logOut().then().catch();
@@ -21,7 +27,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar container px-4 lg:mb-4">
+    <div className={`navbar ${navbarBackgroundClass} container px-4 lg:mb-4`}>
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

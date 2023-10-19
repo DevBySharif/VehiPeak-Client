@@ -1,3 +1,5 @@
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const AddProduct = () => {
   const handleAddProduct = (event) => {
     event.preventDefault();
@@ -39,7 +41,12 @@ const AddProduct = () => {
   };
   return (
     <div className="p-24">
-      <h2 className="text-3xl font-extrabold">Add a Cars</h2>
+      <Link to="/">
+        <button className="flex justify-center gap-2 items-center bg-[#f27426] px-4 py-3 mb-4 rounded-lg text-white font-semibold">
+          <FaArrowLeft></FaArrowLeft> Back to Home
+        </button>
+      </Link>
+      <h2 className="text-3xl font-extrabold">Add a Car</h2>
       <form onSubmit={handleAddProduct}>
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
@@ -171,7 +178,11 @@ const AddProduct = () => {
             </label>
           </div>
         </div>
-        <input type="submit" value="Add Car" className="btn btn-block" />
+        <input
+          type="submit"
+          value="Add Car"
+          className="btn-block bg-[#f27426] py-3 rounded-lg text-white font-bold"
+        />
       </form>
     </div>
   );
