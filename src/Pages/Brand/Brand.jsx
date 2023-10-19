@@ -19,7 +19,7 @@ const Brand = () => {
   }, []);
   return (
     <div className="max-w-[1400px] mx-auto my-12">
-      <h1 className="text-5xl font-extrabold my-4">Popular Make</h1>
+      <h1 className="text-5xl font-extrabold my-4">Popular Brand</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -41,7 +41,7 @@ const Brand = () => {
         ) : (
           brand.map((item) => (
             <SwiperSlide className="w-[400px] h-[400px]" key={item.id}>
-              <Link to={`/brand/${item.id}`}>
+              <Link to={`/brand/${item.brand}`}>
                 <h3 className="text-3xl font-bold text-[#ff4605]">
                   {item.brand}
                 </h3>

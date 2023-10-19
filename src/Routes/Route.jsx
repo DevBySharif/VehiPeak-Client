@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Mainlayout from "../Layout/Mainlayout";
 import AddProduct from "../Pages/AddProduct/AddProduct";
-import BrandDetails from "../Pages/Brand/BrandDetails";
+import BrandCar from "../Pages/Brand/BrandCar";
 import Error from "../Pages/ErrorPage/Error";
 import FeaturedListings from "../Pages/FeaturedListings/FeaturedListings";
 import Home from "../Pages/Home/Home";
@@ -28,8 +28,8 @@ const Route = createBrowserRouter([
     element: <AddProduct></AddProduct>,
   },
   {
-    path: "/brand/:id",
-    element: <BrandDetails></BrandDetails>,
+    path: "/brand/:brand",
+    element: <BrandCar></BrandCar>,
   },
 ]);
 
