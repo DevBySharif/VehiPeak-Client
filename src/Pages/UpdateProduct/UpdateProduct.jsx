@@ -8,6 +8,7 @@ const UpdateProduct = () => {
   const [foundCar, setFoundCar] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
+
   useEffect(() => {
     fetch("http://localhost:5005/cars")
       .then((res) => res.json())
@@ -16,6 +17,7 @@ const UpdateProduct = () => {
         setLoading(false);
       });
   }, []);
+
   useEffect(() => {
     const findCar = loading ? (
       <p>loading..</p>
@@ -24,7 +26,7 @@ const UpdateProduct = () => {
     );
     setFoundCar(findCar);
   }, [id, loadedCars, loading]);
-  console.log(foundCar);
+
   const handleUpdateProduct = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -51,7 +53,6 @@ const UpdateProduct = () => {
       photo,
       rating,
     };
-    console.log(newCars);
 
     fetch(`http://localhost:5005/cars/${foundCar._id}`, {
       method: "PUT",
@@ -73,6 +74,7 @@ const UpdateProduct = () => {
         }
       });
   };
+
   return (
     <div>
       <div className="p-24">
