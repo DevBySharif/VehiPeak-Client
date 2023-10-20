@@ -2,7 +2,6 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const CarsByBrand = ({ car }) => {
-  console.log(car);
   const {
     photo,
     brandName,
@@ -38,9 +37,11 @@ const CarsByBrand = ({ car }) => {
             </div>
             <hr />
             <div className="flex justify-around">
-              <button className="bg-[#ff4605] px-4 py-3 rounded-lg font-bold">
-                Details
-              </button>
+              <Link to="/details">
+                <button className="bg-[#ff4605] px-4 py-3 rounded-lg font-bold">
+                  Details
+                </button>
+              </Link>
               <button>
                 <p className="block font-sans text-sm font-normal leading-normal text-[#ff4605] antialiased opacity-75">
                   <Rating

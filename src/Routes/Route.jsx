@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Mainlayout from "../Layout/Mainlayout";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import BrandCar from "../Pages/Brand/BrandCar";
+import CarDetails from "../Pages/CarDetails/CarDetails";
 import Error from "../Pages/ErrorPage/Error";
 import FeaturedListings from "../Pages/FeaturedListings/FeaturedListings";
 import Home from "../Pages/Home/Home";
@@ -43,14 +44,15 @@ const Route = createBrowserRouter([
         <UpdateProduct></UpdateProduct>
       </PrivateRoute>
     ),
-    loader: (params) =>
-      fetch(
-        `https://vehi-peak-server-side-4xwmy159y-devshari.vercel.app/cars/${params.id}`
-      ),
+    loader: (params) => fetch(`http://localhost:5005/cars/${params.id}`),
   },
   {
     path: "/brand/:brand",
     element: <BrandCar></BrandCar>,
+  },
+  {
+    path: "/details/:id",
+    element: <CarDetails></CarDetails>,
   },
   {
     path: "/cart",

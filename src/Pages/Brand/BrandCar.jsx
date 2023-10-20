@@ -17,7 +17,7 @@ const BrandCar = () => {
   const [brandCars, setBrandCars] = useState([]);
   const { brand } = useParams();
   useEffect(() => {
-    fetch("https://vehi-peak-server-side-4xwmy159y-devshari.vercel.app/cars")
+    fetch("http://localhost:5005/cars")
       .then((res) => res.json())
       .then((data) => {
         setBrandCars(data);
