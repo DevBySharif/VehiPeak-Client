@@ -20,7 +20,7 @@ const FeaturedListings = () => {
       {isFeatureRoute ? <Navbar></Navbar> : ""}
       <div className="lg:max-w-[1400px] mx-auto my-12">
         <h1 className="text-5xl font-extrabold mb-4">Featured Listing</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:mx-4 sm:mx-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-4">
           {isShow
             ? featuredCars?.map((car) => (
                 <FeaturedCard key={car._id} car={car}></FeaturedCard>

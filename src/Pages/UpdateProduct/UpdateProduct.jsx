@@ -83,7 +83,12 @@ const UpdateProduct = () => {
             <FaArrowLeft></FaArrowLeft> Back to Home
           </button>
         </Link>
-        <h2 className="text-3xl font-extrabold text-center">Update a Car</h2>
+        <h2 className="text-3xl font-extrabold text-center">
+          Edit Car Details
+        </h2>
+        <p className="text-center my-3">
+          Update the details of the car by modifying the information below.
+        </p>
         <form onSubmit={handleUpdateProduct}>
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">

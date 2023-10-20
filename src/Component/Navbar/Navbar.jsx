@@ -24,13 +24,20 @@ const Navbar = () => {
       <li>
         <NavLink to="/featuredCars">Featured Car</NavLink>
       </li>
+      <li>
+        <NavLink to="/addProduct">Add Product</NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/cart">My Cart</NavLink>
+      </li>
     </>
   );
   return (
-    <div className={`navbar ${navbarBackgroundClass} container px-4 lg:mb-4`}>
+    <div className={`navbar ${navbarBackgroundClass}  px-4 lg:mb-4`}>
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="text-white lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -48,13 +55,19 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  text-white font-muli gap-2 font-semibold"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-transparent rounded-box w-52  text-white font-muli gap-2 font-semibold"
           >
             {link}
           </ul>
         </div>
         <div className="object-contain">
-          <img className="h-[60px] object-contain" src={logo} alt="" />
+          <Link to="/">
+            <img
+              className="lg:h-[60px] md:ml-4 object-contain"
+              src={logo}
+              alt=""
+            />
+          </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -63,14 +76,6 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/addProduct">
-          <button className="btn-small text-white">Add Product</button>
-        </Link>
-        <div className="text-white mx-4">|</div>
-        <Link to="/cart" className="text-white">
-          My Cart
-        </Link>
-        <div className="text-white mx-4">|</div>
         {user?.email ? (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

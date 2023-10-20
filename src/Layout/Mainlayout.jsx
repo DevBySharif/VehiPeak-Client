@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import { Outlet, useLocation } from "react-router-dom";
 import Banner from "../Component/Banner/Banner";
 import Navbar from "../Component/Navbar/Navbar";
@@ -12,7 +13,7 @@ const Mainlayout = () => {
         </div>
         {location.pathname === "/" && <Banner />}
       </div>
-
+      <Toaster></Toaster>
       <Outlet></Outlet>
     </div>
   );

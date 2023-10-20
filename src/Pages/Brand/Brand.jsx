@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -8,14 +8,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Brand = () => {
   const [brand, setBrand] = useState([]);
-  const [loading, setloading] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("brand.json")
       .then((res) => res.json())
       .then((data) => {
         setBrand(data.cars);
       });
-    setloading(false);
+    setLoading(false);
   }, []);
   return (
     <div className="max-w-[1400px] mx-auto my-12">

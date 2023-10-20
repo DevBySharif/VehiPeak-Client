@@ -54,7 +54,10 @@ const AddProduct = () => {
           <FaArrowLeft></FaArrowLeft> Back to Home
         </button>
       </Link>
-      <h2 className="text-3xl font-extrabold text-center">Add a Car</h2>
+      <h2 className="text-3xl font-extrabold text-center">Add a New Car</h2>
+      <p className="text-center py-3">
+        Fill in the details below to add a new car
+      </p>
       <form onSubmit={handleAddProduct}>
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">

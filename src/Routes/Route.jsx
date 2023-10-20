@@ -39,7 +39,11 @@ const Route = createBrowserRouter([
   },
   {
     path: "/updateProduct/:id",
-    element: <UpdateProduct></UpdateProduct>,
+    element: (
+      <PrivateRoute>
+        <UpdateProduct></UpdateProduct>
+      </PrivateRoute>
+    ),
   },
   {
     path: "/brand/:brand",
@@ -51,7 +55,11 @@ const Route = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <MyCart></MyCart>,
+    element: (
+      <PrivateRoute>
+        <MyCart></MyCart>
+      </PrivateRoute>
+    ),
   },
   {
     path: "/login",

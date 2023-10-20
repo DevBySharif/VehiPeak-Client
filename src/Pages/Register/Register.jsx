@@ -1,17 +1,20 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
-// import registerImg from "../../assets/Sign up.gif";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState("");
   const [registrationSuccess, setRegistrationSuccess] = useState("");
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleRegister = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+
     const email = e.target.email.value;
     const password = e.target.password.value;
     const accepted = e.target.terms.checked;
@@ -39,7 +42,9 @@ const Register = () => {
     // create user
     createUser(email, password)
       .then(() => {
-        setRegistrationSuccess("Registration Successful");
+        // setRegistrationSuccess("Registration Successful");
+        toast.success("Registration Successful!");
+        navigate(location?.state ? location.state : "/login");
       })
       .catch((error) => {
         setRegisterError(error.message);
@@ -47,10 +52,7 @@ const Register = () => {
   };
   return (
     <div className="hero min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse gap-32">
-        {/* <div className="text-center lg:text-left">
-          <img src={registerImg} alt="" />
-        </div> */}
+      <div className="hero-content">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">

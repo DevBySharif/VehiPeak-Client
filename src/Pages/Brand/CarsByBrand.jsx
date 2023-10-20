@@ -13,6 +13,7 @@ const CarsByBrand = ({ car }) => {
     rating,
     _id,
   } = car;
+
   return (
     <div>
       <div>

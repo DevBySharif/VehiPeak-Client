@@ -7,7 +7,7 @@ const FeaturedCard = ({ car }) => {
           <img className="h-[250px] w-full" src={photo} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">
+          <h2 className="card-title ">
             {brandName}, {modelName}
           </h2>
           <hr />
@@ -15,7 +15,7 @@ const FeaturedCard = ({ car }) => {
             <button className="bg-[#ff4605] px-4 py-3 font-bold rounded-lg">
               {year}
             </button>
-            <div className="flex gap-3">
+            <div className="lg:flex gap-3">
               <p className="text-lg">{transmission}</p>
               <p className="text-lg">{fuel}</p>
             </div>
