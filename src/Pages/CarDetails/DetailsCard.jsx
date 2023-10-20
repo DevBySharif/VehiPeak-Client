@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Rating from "react-rating";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 import car4 from "../../assets/mixed-car/audi.png";
 import car2 from "../../assets/mixed-car/bmw.png";
 import car1 from "../../assets/mixed-car/chevrolet.png";
@@ -7,6 +9,9 @@ import car3 from "../../assets/mixed-car/fferari.png";
 import car5 from "../../assets/mixed-car/mrec.png";
 
 const DetailsCard = ({ foundCar }) => {
+  const { user } = useContext(AuthContext);
+  const email = user.email;
+  console.log(email);
   const {
     brandName,
     modelName,
@@ -28,6 +33,29 @@ const DetailsCard = ({ foundCar }) => {
   });
 
   const [activeImg, setActiveImage] = useState(images.img4);
+
+  const handleAddToCart = () => {
+    const cartData = { modelName, brandName, price, photo, email };
+    fetch("http://localhost:5005/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cartData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "success!",
+            text: "Product added successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
 
   return (
     <div>
@@ -132,7 +160,10 @@ const DetailsCard = ({ foundCar }) => {
             </p>
           </div>
           <div>
-            <button className="bg-orange-800 text-white font-semibold py-3 px-16 rounded-xl h-full">
+            <button
+              onClick={handleAddToCart}
+              className="bg-orange-800 text-white font-semibold py-3 px-16 rounded-xl h-full"
+            >
               Add to Cart
             </button>
           </div>
