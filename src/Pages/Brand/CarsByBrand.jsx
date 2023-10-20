@@ -37,7 +37,7 @@ const CarsByBrand = ({ car }) => {
             </div>
             <hr />
             <div className="flex justify-around">
-              <Link to="/details">
+              <Link to={`/details/${_id}`}>
                 <button className="bg-[#ff4605] px-4 py-3 rounded-lg font-bold">
                   Details
                 </button>

@@ -2,7 +2,7 @@ const DetailsCard = ({ selectedCar }) => {
   console.log(selectedCar);
   return (
     <div>
-      <h1>detais card</h1>
+      <h1>details card</h1>
     </div>
   );
 };

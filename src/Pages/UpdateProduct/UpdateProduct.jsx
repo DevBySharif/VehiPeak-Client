@@ -1,22 +1,30 @@
+import { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
-  const loadedCar = useLoaderData();
-  console.log(loadedCar);
-  const {
-    photo,
-    brandName,
-    modelName,
-    year,
-    transmission,
-    type,
-    fuel,
-    price,
-    rating,
-    description,
-    _id,
-  } = loadedCar;
+  const [loadedCars, setLoadedCars] = useState([]);
+  const [foundCar, setFoundCar] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
+  useEffect(() => {
+    fetch("http://localhost:5005/cars")
+      .then((res) => res.json())
+      .then((data) => {
+        setLoadedCars(data);
+        setLoading(false);
+      });
+  }, []);
+  useEffect(() => {
+    const findCar = loading ? (
+      <p>loading..</p>
+    ) : (
+      loadedCars.find((car) => car._id === id)
+    );
+    setFoundCar(findCar);
+  }, [id, loadedCars, loading]);
+  console.log(foundCar);
   const handleUpdateProduct = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -43,18 +51,27 @@ const UpdateProduct = () => {
       photo,
       rating,
     };
+    console.log(newCars);
 
-    // fetch("http://localhost:5005/cars", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(newCars),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //   });
+    fetch(`http://localhost:5005/cars/${foundCar._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCars),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product Updated successfully",
+            icon: "Success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
   return (
     <div>
@@ -75,7 +92,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="brandName"
-                  defaultValue={brandName}
+                  defaultValue={foundCar.brandName}
                   placeholder="Brand Name"
                   className="input input-bordered w-full"
                 />
@@ -89,7 +106,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="modelName"
-                  defaultValue={modelName}
+                  defaultValue={foundCar.modelName}
                   placeholder="Model Name"
                   className="input input-bordered w-full"
                 />
@@ -106,7 +123,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="year"
-                  defaultValue={year}
+                  defaultValue={foundCar.year}
                   placeholder="Year"
                   className="input input-bordered w-full"
                 />
@@ -120,7 +137,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="transmission"
-                  defaultValue={transmission}
+                  defaultValue={foundCar.transmission}
                   placeholder="Transmission"
                   className="input input-bordered w-full"
                 />
@@ -136,7 +153,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="type"
-                  defaultValue={type}
+                  defaultValue={foundCar.type}
                   placeholder="Type"
                   className="input input-bordered w-full"
                 />
@@ -150,7 +167,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="fuel"
-                  defaultValue={fuel}
+                  defaultValue={foundCar.fuel}
                   placeholder="Fuel"
                   className="input input-bordered w-full"
                 />
@@ -167,7 +184,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="price"
-                  defaultValue={price}
+                  defaultValue={foundCar.price}
                   placeholder="Price"
                   className="input input-bordered w-full"
                 />
@@ -181,7 +198,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="rating"
-                  defaultValue={rating}
+                  defaultValue={foundCar.rating}
                   placeholder="Rating"
                   className="input input-bordered w-full"
                 />
@@ -198,7 +215,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="description"
-                  defaultValue={description}
+                  defaultValue={foundCar.description}
                   placeholder="Description"
                   className="input input-bordered w-full"
                 />
@@ -212,7 +229,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   name="photo"
-                  defaultValue={photo}
+                  defaultValue={foundCar.photo}
                   placeholder="Photo URL"
                   className="input input-bordered w-full"
                 />
