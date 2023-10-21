@@ -59,14 +59,14 @@ const DetailsCard = ({ foundCar }) => {
 
   return (
     <div>
-      <div className="flex flex-col justify-between lg:flex-row gap-16  max-w-[1400px] mx-auto h-screen my-12">
+      <div className="flex flex-col justify-between lg:flex-row gap-16  max-w-[1400px] mx-auto  my-12">
         <div className="flex flex-col gap-6 lg:w-2/4">
           <img
             src={activeImg}
             alt=""
             className="w-full h-1/2 aspect-square object-cover rounded-xl"
           />
-          <div className="flex flex-row justify-between h-24">
+          <div className="grid grid-flow-col justify-between h-24">
             <img
               src={photo}
               alt=""
@@ -106,7 +106,7 @@ const DetailsCard = ({ foundCar }) => {
           </div>
         </div>
         {/* ABOUT */}
-        <div className="flex flex-col gap-4 lg:w-2/4">
+        <div className="flex flex-col ml-4 gap-4 lg:w-2/4">
           <div>
             <span className=" text-orange-600 font-semibold">{brandName}</span>
             <h1 className="text-3xl font-bold">{modelName}</h1>

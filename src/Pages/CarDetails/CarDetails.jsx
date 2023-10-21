@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Navbar from "../../Component/Navbar/Navbar";
 import DetailsCard from "./DetailsCard";
 
 const CarDetails = () => {
@@ -28,6 +29,7 @@ const CarDetails = () => {
 
   return (
     <div>
+      <Navbar></Navbar>
       <DetailsCard foundCar={foundCar}></DetailsCard>
     </div>
   );

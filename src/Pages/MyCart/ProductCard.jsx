@@ -44,7 +44,7 @@ const ProductCard = ({ product, cartData, setCartData }) => {
             <img className="h-24" src={photo} alt="" />
           </div>
           <div className="flex flex-col justify-between ml-4 flex-grow">
-            <span className="font-bold text-sm">{modelName}</span>
+            <span className="font-bold text-sm text-black">{modelName}</span>
             <span className="text-red-500 text-xs">{brandName}</span>
             <a
               href="#"
@@ -70,10 +70,12 @@ const ProductCard = ({ product, cartData, setCartData }) => {
             <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
           </svg>
         </div>
-        <span className="text-center w-1/5 font-semibold text-sm">
+        <span className="text-center w-1/5 font-semibold text-sm text-black">
           ${price}
         </span>
-        <span className="text-center w-1/5 font-semibold text-sm">$400.00</span>
+        <span className="text-center w-1/5 font-semibold text-sm text-black">
+          $400.00
+        </span>
       </div>
     </div>
   );

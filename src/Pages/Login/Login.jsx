@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Component/Navbar/Navbar";
 import { AuthContext } from "../../Provider/AuthProvider";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import "./Login.css";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -31,18 +30,12 @@ const Login = () => {
   };
 
   return (
-    <div className="login-background">
+    <div>
       <Navbar></Navbar>
 
-      <div className="hero flex justify-evenly">
-        <div className="space-y-3">
-          <h1 className="text-5xl font-bold text-white">Login</h1>
-          <p className="text-lg text-white font-semibold">
-            Sign in to Continue
-          </p>
-        </div>
-        <div className="hero-content">
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div className="lg:h-[87vh]">
+        <div className="flex justify-center items-center">
+          <div className="card flex-shrink-0 w-full max-w-sm  bg-base-100">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
