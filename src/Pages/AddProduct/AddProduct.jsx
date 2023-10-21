@@ -27,7 +27,7 @@ const AddProduct = () => {
       photo,
     };
 
-    fetch("http://localhost:5005/cars", {
+    fetch("https://vehi-peak-server-side.vercel.app/cars", {
       method: "POST",
       headers: {
         "content-type": "application/json",

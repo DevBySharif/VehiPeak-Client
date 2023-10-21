@@ -17,7 +17,7 @@ const ProductCard = ({ product, cartData, setCartData }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         //
-        fetch(`http://localhost:5005/cart/${_id}`, {
+        fetch(`https://vehi-peak-server-side.vercel.app/cart/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -10,7 +10,7 @@ const UpdateProduct = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:5005/cars")
+    fetch("https://vehi-peak-server-side.vercel.app/cars")
       .then((res) => res.json())
       .then((data) => {
         setLoadedCars(data);
@@ -54,7 +54,7 @@ const UpdateProduct = () => {
       rating,
     };
 
-    fetch(`http://localhost:5005/cars/${foundCar._id}`, {
+    fetch(`https://vehi-peak-server-side.vercel.app/cars/${foundCar._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

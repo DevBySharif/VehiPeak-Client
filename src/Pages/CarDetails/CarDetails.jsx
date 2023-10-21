@@ -9,7 +9,7 @@ const CarDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:5005/cars")
+    fetch("https://vehi-peak-server-side.vercel.app/cars")
       .then((res) => res.json())
       .then((data) => {
         setLoadedCars(data);

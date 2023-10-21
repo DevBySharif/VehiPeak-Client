@@ -36,7 +36,7 @@ const DetailsCard = ({ foundCar }) => {
 
   const handleAddToCart = () => {
     const cartData = { modelName, brandName, price, photo, email };
-    fetch("http://localhost:5005/cart", {
+    fetch("https://vehi-peak-server-side.vercel.app/cart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
